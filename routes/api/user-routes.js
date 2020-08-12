@@ -19,6 +19,7 @@ router.get('/:id', (req, res) => {
     User.findOne({
         where: {
             id: req.params.id
+            
         }
     })
     .then(dbUserData => {
