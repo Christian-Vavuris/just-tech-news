@@ -4,7 +4,11 @@ const sequelize = require('../config/connection');
 // const { canTreatArrayAsAnd } = require('sequelize/types/lib/utils');
 
 //create our user model
-class User extends Model {}
+class User extends Model {
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+    }
+}
 
 //define table columns and configurations
 
